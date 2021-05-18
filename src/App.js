@@ -1,5 +1,8 @@
 import { useEffect, useReducer, useState } from "react";
+import Checkbox from "./Checkbox";
 import "./App.css";
+import CheckboxInput from "./CheckboxInput";
+import Label from "./Label";
 
 const ACTIONS = {
   PASSED_ONCE: "PASSED_ONCE",
@@ -83,6 +86,10 @@ function App() {
       <button onClick={onClicked} />
       {/* <Button {...props} color='blue' /> */}
       Current Statess : {state}
+      <Checkbox test='say something'>
+        <CheckboxInput />
+        <Label>Label of Checbox</Label>
+      </Checkbox>
     </div>
   );
 }
