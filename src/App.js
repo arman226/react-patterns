@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+
+const Button = ({ color, increment, underline }) => {
+  const [counter, setCounter] = useState(0);
+  return (
+    <div
+      style={{ color, textDecoration: underline && "underline" }}
+      onClick={() => {
+        setCounter((prev) => prev + increment);
+      }}
+    >
+      I am a button {counter}
+    </div>
+  );
+};
 
 function App() {
+  const props = {
+    increment: 2,
+    underline: true,
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <Button {...props} color='blue' />
     </div>
   );
 }
