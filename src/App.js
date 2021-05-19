@@ -83,11 +83,14 @@ function App() {
 
   return (
     <div className='App'>
-      <button onClick={onClicked} />
+      {/* <button onClick={onClicked} /> */}
       {/* <Button {...props} color='blue' /> */}
-      Current Statess : {state}
+      {/* Current State : {state} */}
       <Checkbox test='say something'>
         <CheckboxInput />
+        {/* <br /> */}
+        {/* <p>Hello</p> */}
+        <p>Hello</p>
         <Label>Label of Checbox</Label>
       </Checkbox>
     </div>
